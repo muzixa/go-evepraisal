@@ -4,7 +4,7 @@ import (
 	"net/http"
 	"strconv"
 
-	"github.com/evepraisal/go-evepraisal"
+	"github.com/muzixa/go-evepraisal"
 )
 
 // HandleLatestAppraisals is the handler for /latest
