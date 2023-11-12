@@ -5,7 +5,7 @@ import (
 
 	"golang.org/x/oauth2"
 
-	"github.com/evepraisal/go-evepraisal"
+	"github.com/muzixa/go-evepraisal"
 	"github.com/gorilla/sessions"
 )
 
