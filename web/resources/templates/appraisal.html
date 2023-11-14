@@ -131,7 +131,7 @@
       </thead>
       <tbody>
       {{range $i, $item := .Page.Appraisal.Items}}
-      {{ if (or $.Page.ShowFull (lt $i 100)) }}
+      {{ if (or $.Page.ShowFull (lt $i 1000)) }}
         <tr class="{{if eq $item.TypeID 0}}table-danger{{else if eq $item.Prices.All.Volume 0}}table-info{{else if $item.Extra.BPC}}table-info{{end}}">
           <td class="numeric-cell text-center align-middle" data-sort-value="-{{$item.Quantity}}">{{comma $item.Quantity}}</td>
           <td class="align-middle">
@@ -163,12 +163,12 @@
       {{end}}
       </tbody>
       <tfoot>
-        {{if (and (not $.Page.Appraisal.ID) (ge (len .Page.Appraisal.Items) 100))}}
+        {{if (and (not $.Page.Appraisal.ID) (ge (len .Page.Appraisal.Items) 1000))}}
         <tr>
           <td class="text-center bg-dark text-white" colspan="6">There are too many results to on one page.</td>
         </tr>
         {{end}}
-        {{if (and $.Page.Appraisal.ID (not $.Page.ShowFull) (ge (len .Page.Appraisal.Items) 100))}}
+        {{if (and $.Page.Appraisal.ID (not $.Page.ShowFull) (ge (len .Page.Appraisal.Items) 1000))}}
         <tr>
           <td class="text-center bg-dark text-white" colspan="6">There are too many results to show. <a href="/a/{{.Page.Appraisal.ID}}?full=true" class="alert-link">Click here to see all <strong>{{.Page.Appraisal.Items | len }}</strong> results.</a> Warning: The page might be slow.</td>
         </tr>
